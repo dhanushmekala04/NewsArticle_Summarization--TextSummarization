@@ -68,7 +68,7 @@ The model’s performance was monitored throughout the training process using th
 The model produced **coherent and concise summaries** that effectively captured the main points of the original news articles. The use of ROUGE metrics demonstrated a strong overlap between the generated and reference summaries.
 
 ![Alt Text](https://github.com/dhanushmekala04/TextSummarization---News-Articles/blob/main/Screenshot%202024-09-23%20051739.png)
-![Sample Output](Screenshot 2024-09-23 051739.png)
+
 
 
 
