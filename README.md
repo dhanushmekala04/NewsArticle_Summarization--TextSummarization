@@ -69,7 +69,8 @@ The model produced **coherent and concise summaries** that effectively captured 
 
 ![Alt Text](https://github.com/dhanushmekala04/TextSummarization---News-Articles/blob/main/Screenshot%202024-09-23%20051739.png)
 
-##Conclusion
+## Conclusion
+
 This project demonstrated the successful application of the T5-Base model for extractive text summarization. The model effectively condensed news articles into concise summaries while preserving key information and maintaining high ROUGE scores, indicating strong performance.
 
 
