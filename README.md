@@ -67,6 +67,8 @@ The model’s performance was monitored throughout the training process using th
 ## Results
 The model produced **coherent and concise summaries** that effectively captured the main points of the original news articles. The use of ROUGE metrics demonstrated a strong overlap between the generated and reference summaries.
 
-![Alt Text](path_to_image)
+![Alt Text](Screenshot 2024-09-23 051739.png)
+![Sample Output](Screenshot 2024-09-23 051739.png)
+
 
 
