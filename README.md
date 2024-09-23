@@ -1,58 +1,72 @@
-# *Extractive Text Summarization of News Articles Using the T5-Base Model
-Project Overview
-This project focuses on developing an extractive text summarization model for news articles using the T5-Base model (Text-to-Text Transfer Transformer). The goal is to condense long-form news articles into concise and meaningful summaries while retaining the key information and context of the original text.
+# Extractive Text Summarization of News Articles Using the T5-Base Model
 
-The T5 model is a transformer-based text generation model that reformulates all language tasks into a text-to-text format, making it an excellent candidate for summarization tasks. The model will be trained and fine-tuned to generate coherent summaries from the news dataset, ensuring the summaries are not only short but also accurate and readable.
+## Project Overview
+This project aims to develop an extractive text summarization model for news articles using the T5-Base model (Text-to-Text Transfer Transformer). The goal is to condense long-form news articles into concise, meaningful summaries while retaining the essential information and context of the original content.
 
-Dataset
-The dataset used in this project is the BBC News Summary dataset, which contains 417 articles from the BBC published between 2004 and 2005. Each article is accompanied by five corresponding summaries that provide a brief overview of the article’s content. The first clause of each article acts as a title, giving further context for summarization.
+The T5 model is a transformer-based text generation model that reformulates all language tasks into a text-to-text format, making it a suitable candidate for summarization tasks. It will be fine-tuned to generate coherent summaries from a news dataset, ensuring that the summaries are accurate, readable, and contextually relevant.
 
-Dataset Link: gopalkalpande/bbc-news-summary
+## Dataset
+The dataset used is the **BBC News Summary** dataset, which consists of 417 articles published by the BBC between 2004 and 2005. Each article is accompanied by five manually written summaries that provide a brief overview of the article’s content. The first clause of each article serves as the title, giving additional context for the summarization task.
 
-Key Features of the Dataset:
-Articles: Full news articles from the BBC.
-Summaries: Five manually written summaries per article.
-File Path: File path indicating the class label (e.g., business, sports).
-Objectives
-The primary objectives of this project are:
+- **Dataset Link**: `gopalkalpande/bbc-news-summary`
 
-Build an extractive summarization model capable of summarizing long news articles.
-Use the T5-Base model to generate human-like summaries.
-Evaluate the model using ROUGE metrics to assess the quality of the summaries.
-Implement the model for real-world inference and summarization tasks.
-Methodology
-1. Data Preparation
-Exploratory Data Analysis (EDA): Analyzed the dataset to understand the distribution of article lengths and summary lengths.
-Calculated average, maximum, and minimum lengths of articles and summaries.
-Visualized the distribution of article lengths and file paths to get an idea of content variety.
-Text Preprocessing: Preprocessed the text data to prepare it for model training:
-Added the "summarize:" prefix to each article to guide the model on the task.
-Tokenized articles and summaries using the T5 tokenizer.
-Dataset Split: The dataset was split into 80% training and 20% validation sets for model development and evaluation.
-2. Model Training
-Model Choice: The T5-Base model was chosen for its flexibility in text-to-text transformations. It is a state-of-the-art model for summarization, translation, and text generation tasks.
+### Key Features of the Dataset:
+- **Articles**: Full news articles from the BBC.
+- **Summaries**: Five human-written summaries per article.
+- **Categories**: Each file path corresponds to a class label (e.g., business, sports).
 
-Training Configuration:
+## Objectives
+- Build an extractive summarization model to summarize long news articles.
+- Fine-tune the T5-Base model to generate human-like summaries.
+- Evaluate the model using **ROUGE** metrics to assess the quality of the summaries.
+- Apply the model for real-world inference in summarization tasks.
 
-Trained using the Hugging Face Trainer API.
-Hyperparameters like batch size, learning rate, number of epochs, and evaluation steps were fine-tuned for optimal performance.
-Metrics such as ROUGE (ROUGE-1, ROUGE-2, and ROUGE-L) were computed to evaluate the model.
-Training Process:
+## Methodology
+### 1. Data Preparation
+- **Exploratory Data Analysis (EDA)**: 
+  - Analyzed the dataset to understand the distribution of article lengths and summary lengths.
+  - Calculated the average, maximum, and minimum lengths of both articles and summaries.
+  - Visualized article lengths and category distribution to understand content variety.
 
-The model was trained using the preprocessed articles as input and their corresponding summaries as the target output.
-During training, the model generated summaries for validation data, which were evaluated to monitor progress and prevent overfitting.
-3. Inference
-After training, the model was used to summarize new articles. Inference involved:
+- **Text Preprocessing**:
+  - Added the prefix `"summarize:"` to each article to guide the model.
+  - Tokenized articles and summaries using the **T5 tokenizer**.
 
-Tokenizing the input article.
-Using the trained T5 model to generate a summary.
-Decoding the output and returning the summary.
-Evaluation
-The model was evaluated using ROUGE metrics, a standard evaluation measure for summarization tasks. ROUGE compares the overlap between the generated summaries and the reference summaries in terms of unigrams, bigrams, and longest common subsequence (LCS).
+- **Dataset Splitting**: 
+  - Split the dataset into **80% training** and **20% validation** sets for model development and evaluation.
 
-The following metrics were computed:
+### 2. Model Training
+- **Model Selection**: 
+  - The **T5-Base** model was chosen due to its flexibility in handling text-to-text tasks like summarization.
 
-ROUGE-1: Measures the overlap of unigrams between the generated and reference summaries.
-ROUGE-2: Measures the overlap of bigrams.
-ROUGE-L: Measures the longest common subsequence.
-The model’s performance was periodically evaluated during training using the validation dataset, and the model was saved after each epoch to preserve the best version.
+- **Training Configuration**:
+  - Used the **Hugging Face Trainer API** to simplify training.
+  - Fine-tuned hyperparameters such as batch size, learning rate, number of epochs, and evaluation steps for optimal performance.
+  - Computed metrics such as **ROUGE-1**, **ROUGE-2**, and **ROUGE-L** during training.
+
+- **Training Process**:
+  - The model was trained by providing the tokenized articles as input and their corresponding summaries as output.
+  - The validation data was used to periodically assess performance, preventing overfitting.
+
+### 3. Inference
+After training, the model was used to summarize new articles. The inference process involved:
+- Tokenizing the input article.
+- Generating the summary using the trained T5 model.
+- Decoding the output and returning the final summary.
+
+## Evaluation
+The model was evaluated using **ROUGE** metrics, which are widely used in text summarization tasks to compare the overlap between the generated and reference summaries.
+
+### Evaluation Metrics:
+- **ROUGE-1**: Overlap of unigrams (single words).
+- **ROUGE-2**: Overlap of bigrams (pairs of words).
+- **ROUGE-L**: Longest common subsequence (LCS) between the generated and reference summaries.
+
+The model’s performance was monitored throughout the training process using the validation dataset. The best model was saved after each epoch to ensure optimal results.
+
+## Results
+The model produced **coherent and concise summaries** that effectively captured the main points of the original news articles. The use of ROUGE metrics demonstrated a strong overlap between the generated and reference summaries.
+
+![Alt Text](path_to_image)
+
+
