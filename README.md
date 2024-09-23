@@ -1,4 +1,4 @@
-Extractive Text Summarization of News Articles Using the T5-Base Model
+# *Extractive Text Summarization of News Articles Using the T5-Base Model
 Project Overview
 This project focuses on developing an extractive text summarization model for news articles using the T5-Base model (Text-to-Text Transfer Transformer). The goal is to condense long-form news articles into concise and meaningful summaries while retaining the key information and context of the original text.
 
